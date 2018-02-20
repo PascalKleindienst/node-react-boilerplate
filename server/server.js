@@ -6,4 +6,5 @@ const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log('The magic happens on port ' + port);
+    console.log(process.env.LOGLEVEL);
 });

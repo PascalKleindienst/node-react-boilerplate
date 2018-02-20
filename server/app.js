@@ -2,13 +2,20 @@
  * Bootstrap Server
  */
 // Load Packages
-const express    = require('express');
-const app        = express();
-const morgan     = require('morgan');
-const bodyParser = require('body-parser');
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const express        = require('express');
+const app            = express();
+const morgan         = require('morgan');
+const bodyParser     = require('body-parser');
+const path           = require('path');
+const publicPath     = path.join(__dirname, '..', 'public');
 
-const path       = require('path');
-const publicPath = path.join(__dirname, '..', 'public');
+// Load env config
+if (process.env.NODE_ENV === 'test') {
+    require('dotenv').config({ path: '.env.test' });
+} else if (process.env.NODE_ENV === 'development') {
+    require('dotenv').config({ path: '.env.development' });
+}
 
 // Configure Server
 app.use(morgan(process.env.LOGLEVEL || 'tiny'));
