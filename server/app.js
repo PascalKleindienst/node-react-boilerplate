@@ -12,15 +12,6 @@ const path           = require('path');
 const publicPath     = path.join(__dirname, '..', 'public');
 const models         = require('./models');
 
-// =================================================
-// Load env variables===============================
-// =================================================
-if (process.env.NODE_ENV === 'test') {
-    require('dotenv').config({ path: '.env.test' });
-} else {
-    require('dotenv').config();
-}
-
 // ========================================
 // EXPRESS SERVER =========================
 // ========================================
