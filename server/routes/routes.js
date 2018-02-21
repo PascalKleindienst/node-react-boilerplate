@@ -1,9 +1,6 @@
-/**
- * Setup Routes
- * @param  {Object} app        The Server
- * @param  {String} publicPath Path to public folder
- */
-
+// ========================================
+// ROUTES =================================
+// ========================================
 module.exports = (app, publicPath) => {
     const path = require('path');
 
