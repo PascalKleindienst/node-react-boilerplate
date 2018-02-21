@@ -1,36 +1,53 @@
-/**
- * Bootstrap Server
- */
-// Load Packages
+// ==================================================
+// Bootstrap Server =================================
+// ==================================================
 const express        = require('express');
 const app            = express();
 const morgan         = require('morgan');
+const cookieParser   = require('cookie-parser');
 const bodyParser     = require('body-parser');
+const passport       = require('passport')
+const session        = require('express-session')
 const path           = require('path');
 const publicPath     = path.join(__dirname, '..', 'public');
+const models         = require('./models');
 
-// Load env config
+// =================================================
+// Load env variables===============================
+// =================================================
 if (process.env.NODE_ENV === 'test') {
     require('dotenv').config({ path: '.env.test' });
 } else {
     require('dotenv').config();
 }
 
-// For Express
+// ========================================
+// EXPRESS SERVER =========================
+// ========================================
 app.use(morgan(process.env.LOGLEVEL || 'tiny'));
 app.use(express.static(publicPath));
-
-// For BodyParser
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//Models
-const models = require("./models");
+// ========================================
+// PASSPORT ===============================
+// ========================================
+app.use(session({ secret: process.env.SECRET, resave: true, saveUninitialized: true })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
-// Routes
-const routes = require('./routes/routes')(app, publicPath);
+require('./config/passport.js')(passport, models.User);
 
-//Sync Database
+// ========================================
+// ROUTES =================================
+// ========================================
+const authRoutes = require('./routes/auth')(app, passport);
+const fallBackRoutes = require('./routes/routes')(app, publicPath);
+
+// ========================================
+// DATABASE ===============================
+// ========================================
 models.sequelize.sync().then(() => {
     console.log('Nice! Database looks fine')
 }).catch((err) => {
