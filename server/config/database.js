@@ -1,5 +1,5 @@
 // ========================================
-// DATABASE CONFIGURATION ==)))============
+// DATABASE CONFIGURATION =================
 // ========================================
 module.exports = {
   development: {
