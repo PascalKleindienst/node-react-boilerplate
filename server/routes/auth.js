@@ -16,9 +16,9 @@ module.exports = (app, passport) => {
     // =========================================
     // GENERAL AUTH ROUTES =====================
     // =========================================
-    app.get('/logout', (req, res) => {
+    app.get('/auth/logout', (req, res) => {
         req.logout();
-        res.redirect('/');
+        res.json({ message: 'Logged out user' });
     });
 
     app.get('/auth/user', (req, res) => {
