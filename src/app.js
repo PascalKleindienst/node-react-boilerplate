@@ -1,36 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import ajax from 'fetchival';
-import AppRouter, { history } from './routers/AppRouter';
-import LoadingPage from './components/LoadingPage';
-import configureStore from './store/configureStore';
+import renderLoadingPage, { store, renderApp} from './bootstrap';
+import { history } from './routers/AppRouter';
 import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
-const store = configureStore();
+// Render Loading page
+renderLoadingPage();
 
-// Page Template
-const jsx = (
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>
-);
-
-// Render App
-let hasRendered = false;
-const renderApp = () => {
-    if (!hasRendered) {
-        ReactDOM.render(jsx, document.getElementById('app'));
-        hasRendered = true;
-    }
-};
-
-// Load Expenses and render page
-ReactDOM.render(<LoadingPage />, document.getElementById('app'));
-
-// Authentication
+// Authentication -> render correct page
 ajax('/auth/user', { mode: 'cors', credentials: 'same-origin' }).get().then((json) => {
     if ('error' in json) {
         store.dispatch(logout());
