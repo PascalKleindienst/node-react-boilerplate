@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppRouter from './routers/AppRouter';
+import ajax from 'fetchival';
+import AppRouter, { history } from './routers/AppRouter';
 import LoadingPage from './components/LoadingPage';
 import configureStore from './store/configureStore';
+import { login, logout } from './actions/auth';
 
 export const store = configureStore();
 
@@ -21,6 +23,25 @@ export const renderApp = () => {
         ReactDOM.render(jsx, document.getElementById('app'));
         hasRendered = true;
     }
+};
+
+export const authenticatedView = () => {
+    // Authentication -> render correct page
+    return ajax('/auth/user', { mode: 'cors', credentials: 'same-origin' }).get().then((json) => {
+        if ('error' in json) {
+            store.dispatch(logout());
+            renderApp();
+            history.push('/');
+        } else {
+            store.dispatch(login(json));
+            renderApp();
+            if (history.location.pathname === '/') {
+                history.push('/dashboard');
+            }
+        }
+        
+        return json;
+    });
 };
 
 export default () => {
