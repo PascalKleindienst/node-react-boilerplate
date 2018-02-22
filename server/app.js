@@ -6,8 +6,8 @@ const app            = express();
 const morgan         = require('morgan');
 const cookieParser   = require('cookie-parser');
 const bodyParser     = require('body-parser');
-const passport       = require('passport')
-const session        = require('express-session')
+const passport       = require('passport');
+const session        = require('express-session');
 const path           = require('path');
 const publicPath     = path.join(__dirname, '..', 'public');
 const models         = require('./models');
@@ -33,16 +33,16 @@ require('./config/passport.js')(passport, models.User);
 // ========================================
 // ROUTES =================================
 // ========================================
-const authRoutes = require('./routes/auth')(app, passport);
-const fallBackRoutes = require('./routes/routes')(app, publicPath);
+require('./routes/auth')(app, passport);
+require('./routes/routes')(app, publicPath);
 
 // ========================================
 // DATABASE ===============================
 // ========================================
 models.sequelize.sync().then(() => {
-    console.log('Nice! Database looks fine')
+    console.log('Nice! Database looks fine');
 }).catch((err) => {
-    console.log(err, 'Something went wrong with the Database Update!')
+    console.log(err, 'Something went wrong with the Database Update!');
 });
 
 module.exports = app;

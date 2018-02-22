@@ -26,7 +26,7 @@ const setupPassport = (passport, User) => {
                 }
 
                 // save our user into the database
-                User.create({ provider, email, name, picture, displayName, token }).then((newUser, created) => {
+                User.create({ provider, email, name, picture, displayName, token }).then((newUser) => {
                     if (newUser) {
                         return done(null, newUser);
                     }
@@ -35,7 +35,7 @@ const setupPassport = (passport, User) => {
                 });
             })
             .catch(err => done(err));
-    }
+    };
 
     // =========================================================================
     // De-/Serialize User information============================================
