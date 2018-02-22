@@ -2,6 +2,7 @@
 // HEADER COMPONENT==============================
 // ==============================================
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../actions/auth';
@@ -32,6 +33,14 @@ export const Header = ({ auth, logout }) => (
         </div>
     </header>
 );
+
+// PropTypes
+Header.propTypes = {
+    auth: PropTypes.shape({
+        picture: PropTypes.string.isRequired,
+    }),
+    logout: PropTypes.func.isRequired
+};
 
 // States
 const mapStateToProps = (state) => ({

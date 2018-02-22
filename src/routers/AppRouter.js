@@ -2,7 +2,7 @@
 // APP ROUTER ===================================
 // ==============================================
 import React from 'react';
-import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import DashboardPage from '../components/DashboardPage';
 import LoginPage from '../components/LoginPage';

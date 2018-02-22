@@ -2,6 +2,7 @@
 // PRIVATE ROUTER ===============================
 // ==============================================
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import Header from '../components/Header';
@@ -23,6 +24,12 @@ export const PrivateRoute = ({
         )
     )} />
 );
+
+// PropTypes
+PrivateRoute.propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
+    component: PropTypes.element
+};
 
 // States
 const mapStateToProps = (state) => ({

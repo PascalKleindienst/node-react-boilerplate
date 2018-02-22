@@ -2,6 +2,7 @@
 // PUBLIC ROUTE =================================
 // ==============================================
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
@@ -19,6 +20,12 @@ export const PublicRoute = ({
         )
     )} />
 );
+
+// PropTypes
+PublicRoute.propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
+    component: PropTypes.element
+};
 
 // States
 const mapStateToProps = (state) => ({
