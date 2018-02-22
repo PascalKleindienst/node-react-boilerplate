@@ -1,13 +1,23 @@
 // ==============================================
 // AUTH ACTIONS =================================
 // ==============================================
+import ajax from 'fetchival';
+
+// Login
 export const LOGIN = 'LOGIN';
 export const login = (uid) => ({
     type: LOGIN,
     uid
 });
 
+// Logout
 export const LOGOUT = 'LOGOUT';
-export const logout = () => ({
-    type: LOGOUT
-});
+export const logout = () => {
+    return (dispatch) => {
+        return ajax('/auth/logout', { mode: 'cors', credentials: 'same-origin' }).get().then( () => {
+            dispatch({
+                type: LOGOUT
+            });
+        });
+  };
+};
