@@ -23,6 +23,6 @@ module.exports = {
         'clientSecret'  : process.env.FACEBOOK_CLIENT_SECRET,
         'callbackURL'   : process.env.FACEBOOK_CALLBACK_URL,
         'profileURL'    : 'https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email',
-        'profileFields' : ['id', 'email', 'name'] // For requesting permissions from Facebook API
+        'profileFields' : ['id', 'email', 'name', 'picture.type(large)'] // For requesting permissions from Facebook API
     },
 };

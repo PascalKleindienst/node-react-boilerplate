@@ -17,7 +17,7 @@ module.exports = (passport, User) => {
     // =========================================================================
     // Return existing User or create a new user account========================
     // =========================================================================
-    const onAuth = ({ provider, email, name, displayName, token }, done) => {
+    const onAuth = ({ provider, email, name, picture, displayName, token }, done) => {
         User.findOne({ where: { provider, email } })
             .then((user) => {
                 // if the user is found then log them in
@@ -26,7 +26,7 @@ module.exports = (passport, User) => {
                 }
 
                 // save our user into the database
-                User.create({ provider, email, name, displayName, token }).then((newUser, created) => {
+                User.create({ provider, email, name, picture, displayName, token }).then((newUser, created) => {
                     if (newUser) {
                         return done(null, newUser);
                     }
@@ -57,6 +57,7 @@ module.exports = (passport, User) => {
                 provider: 'twitter',
                 email: profile.emails[0].value,
                 name: profile.displayName,
+                picture: profile.photos ? profile.photos[0].value.replace('_normal', '') : undefined,
                 token
             };
             return onAuth(data, done);
@@ -72,6 +73,7 @@ module.exports = (passport, User) => {
                 provider: 'facebook',
                 email: profile.emails[0].value,
                 name: profile.name.givenName + ' ' + profile.name.familyName,
+                picture: profile.photos ? profile.photos[0].value : undefined,
                 token
             };
             return onAuth(data, done);
@@ -87,6 +89,7 @@ module.exports = (passport, User) => {
                 provider: 'google',
                 email: profile.emails[0].value, // pull the first email
                 name: profile.displayName,
+                picture: profile.photos ? profile.photos[0].value.replace(/\?sz=\d+/gi, '') : undefined,
                 token
             };
             return onAuth(data, done);

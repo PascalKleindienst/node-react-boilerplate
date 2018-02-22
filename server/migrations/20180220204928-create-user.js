@@ -14,6 +14,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      picture: {
+        type: Sequelize.STRING
+      },
       token: {
         type: Sequelize.STRING
       },

@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     },
     name: DataTypes.STRING,
+    picture: DataTypes.STRING,
     token: DataTypes.STRING,
     provider: DataTypes.ENUM('twitter', 'google', 'facebook', 'github'),
     createdAt: DataTypes.DATE,
