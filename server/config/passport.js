@@ -13,7 +13,7 @@ const configAuth       = require('./auth');
  * @param  {Object} passport
  * @param  {Object} User
  */
-module.exports = (passport, User) => {
+const setupPassport = (passport, User) => {
     // =========================================================================
     // Return existing User or create a new user account========================
     // =========================================================================
@@ -96,3 +96,6 @@ module.exports = (passport, User) => {
         });
     }));
 };
+
+// Export
+module.exports = setupPassport;
