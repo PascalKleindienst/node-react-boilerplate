@@ -5,9 +5,9 @@ import ajax from 'fetchival';
 
 // Login
 export const LOGIN = 'LOGIN';
-export const login = (uid) => ({
+export const login = (user) => ({
     type: LOGIN,
-    uid
+    user
 });
 
 // Logout
