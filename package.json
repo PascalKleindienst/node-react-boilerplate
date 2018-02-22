@@ -12,6 +12,7 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js"
   },
+  "eslintIgnore": ["tests/*"],
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
