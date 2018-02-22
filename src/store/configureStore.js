@@ -1,5 +1,5 @@
 // ==============================================
-// Configure Redux Store =======================
+// CONFIGURE REDUX STORE ========================
 // ==============================================
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
