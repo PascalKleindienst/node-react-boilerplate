@@ -24,7 +24,7 @@ export const Header = ({ auth, logout }) => (
                         <Link className="dropdown-menu__item" to="/profile">
                             Profile
                         </Link>
-                        <Link className="dropdown-menu__item" onClick={logout} to="#">
+                        <Link className="dropdown-menu__item logout" onClick={logout} to="#">
                             Logout
                         </Link>
                     </div>
