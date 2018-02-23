@@ -17,7 +17,7 @@ const setupPassport = (passport, User) => {
     // =========================================================================
     // Return existing User or create a new user account========================
     // =========================================================================
-    const onAuth = ({ provider, email, name, picture, displayName, token }, done) => {
+    const onAuth = ({ provider, email, name, picture, token }, done) => {
         User.findOne({ where: { provider, email } })
             .then((user) => {
                 // if the user is found then log them in
@@ -26,7 +26,7 @@ const setupPassport = (passport, User) => {
                 }
 
                 // save our user into the database
-                User.create({ provider, email, name, picture, displayName, token }).then((newUser) => {
+                User.create({ provider, email, name, picture, token }).then((newUser) => {
                     if (newUser) {
                         return done(null, newUser);
                     }
