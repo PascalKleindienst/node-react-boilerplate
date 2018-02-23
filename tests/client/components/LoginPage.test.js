@@ -1,13 +1,13 @@
 // ==============================================
-// NOT FOUND PAGE TEST ==========================
+// LOGIN PAGE TEST ==============================
 // ==============================================
 import React from 'react';
 import { shallow } from 'enzyme';
-import NotFoundPage from '../../src/components/NotFoundPage';
+import LoginPage from '../../../src/components/LoginPage';
 
-describe('my NotFoundPage component', () => {
+describe('my Login page component', () => {
     test('should render correctly', () => {
-        const wrapper = shallow(<NotFoundPage />);
+        const wrapper = shallow(<LoginPage />);
         expect(wrapper).toMatchSnapshot();
     });
 });

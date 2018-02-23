@@ -8,7 +8,7 @@ jest.mock('fetchival');
 // Dependencies
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import { LOGIN, login, LOGOUT, logout } from '../../src/actions/auth';
+import { LOGIN, login, LOGOUT, logout } from '../../../src/actions/auth';
 
 const createMockStore = configureMockStore([thunk]);
 

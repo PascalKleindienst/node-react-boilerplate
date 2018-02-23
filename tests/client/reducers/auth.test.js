@@ -1,8 +1,8 @@
 // ==============================================
 // AUTH REDUCER TEST ============================
 // ==============================================
-import authReducer from '../../src/reducers/auth';
-import { LOGIN, LOGOUT } from '../../src/actions/auth';
+import authReducer from '../../../src/reducers/auth';
+import { LOGIN, LOGOUT } from '../../../src/actions/auth';
 
 describe('my auth reducer', () => {
     const user = {

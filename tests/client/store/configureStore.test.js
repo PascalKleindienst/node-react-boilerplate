@@ -1,7 +1,7 @@
 // ==============================================
 // CONFIGURE STORE TEST =========================
 // ==============================================
-import configureStore from '../../src/store/configureStore';
+import configureStore from '../../../src/store/configureStore';
 
 describe('my store', () => {
     let store;

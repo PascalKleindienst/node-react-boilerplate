@@ -10,8 +10,8 @@ import React from 'react';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import { shallow } from 'enzyme';
-import HeaderContainer, { Header } from '../../src/components/Header';
-import { logout } from '../../src/actions/auth';
+import HeaderContainer, { Header } from '../../../src/components/Header';
+import { logout } from '../../../src/actions/auth';
 
 const mockStore = configureMockStore([thunk]);
 

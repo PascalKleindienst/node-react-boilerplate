@@ -5,7 +5,7 @@ import React from 'react';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import { shallow } from 'enzyme';
-import PrivateRouteContainer, { PrivateRoute } from '../../src/routers/PrivateRoute';
+import PrivateRouteContainer, { PrivateRoute } from '../../../src/routers/PrivateRoute';
 
 const mockStore = configureMockStore([thunk]);
 

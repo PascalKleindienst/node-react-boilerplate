@@ -10,10 +10,10 @@ jest.mock('react-dom', (jsx, el) => ({
 
 // Dependencies
 import React from 'react';
-import { history } from '../src/routers/AppRouter';
-import renderLoadingPage, { store, renderApp, authenticatedView } from '../src/bootstrap';
-import configureStore from '../src/store/configureStore';
-import LoadingPage from '../src/components/LoadingPage';
+import { history } from '../../src/routers/AppRouter';
+import renderLoadingPage, { store, renderApp, authenticatedView } from '../../src/bootstrap';
+import configureStore from '../../src/store/configureStore';
+import LoadingPage from '../../src/components/LoadingPage';
 
 
 describe('my bootstrap setup', () => {
