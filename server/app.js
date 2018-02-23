@@ -39,6 +39,7 @@ require('./routes/routes')(app, publicPath);
 // ========================================
 // DATABASE ===============================
 // ========================================
+app.locals.models = models;
 models.sequelize.sync().then(() => {
     console.log('Nice! Database looks fine');
 }).catch((err) => {

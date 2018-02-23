@@ -12,5 +12,5 @@ const db = {
 module.exports = {
     development: db,
     production: db,
-    test: { ...db,  dialect: process.env.DB_DIALECT || 'sqlite' }
+    test: { ...db,  storage: '.test.db', dialect: 'sqlite' }
 };
