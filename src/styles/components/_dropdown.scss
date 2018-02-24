@@ -1,0 +1,50 @@
+// ==============================================
+// DROPDOWN MENU ================================
+// ==============================================
+
+// =============== Dropdown indicator ===============
+.has-dropdown {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        .dropdown-menu {
+            display: block;
+        }
+    }
+}
+
+// =============== Dropdown Menu ===============
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    display: none;
+    cursor: default;
+    background: $white;
+    border: 1px solid $light-grey;
+
+    &__header {
+        padding: 8px $xl-size;
+        color: $dark-grey;
+        text-align: center;
+        background: $off-white;
+        border-bottom: 1px solid $light-grey;
+    }
+
+    &__item {
+        display: block;
+        padding: 8px $m-size;
+        color: $grey;
+        text-decoration: none;
+        border-bottom: 1px solid $light-grey;
+        transition: background .3s ease-in;
+
+        &:hover {
+            background: $off-white;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}

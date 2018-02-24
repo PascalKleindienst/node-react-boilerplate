@@ -1,0 +1,16 @@
+// ==============================================
+// LOAD IMAGE ===================================
+// ==============================================
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+    &__image {
+        width: 15rem;
+        height: 15rem;
+    }
+}

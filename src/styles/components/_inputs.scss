@@ -1,0 +1,22 @@
+// ==============================================
+// INPUT FIELDS =================================
+// ==============================================
+
+// =============== Default Input ===============
+.form-field {
+    height: 50px;
+    padding: $s-size;
+    font-size: $font-size-large;
+    font-weight: 300;
+    border: 1px solid $light-grey;
+    outline: none;
+
+    &:focus {
+        border-bottom: 2px solid $light-green;
+    }
+}
+
+// =============== Textarea ===============
+.form-field--textarea {
+    height: 10rem;
+}

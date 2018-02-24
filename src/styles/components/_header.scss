@@ -1,0 +1,30 @@
+// ==============================================
+// HEADER =======================================
+// ==============================================
+
+.header {
+    background: $dark-blue;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $s-size 0;
+
+    }
+
+    &__title {
+        color: $inverted-font-color;
+        text-decoration: none;
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    .profile__picture {
+        width: auto;
+        height: 38px;
+        border-radius: 50%;
+    }
+}

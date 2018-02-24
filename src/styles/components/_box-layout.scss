@@ -1,0 +1,26 @@
+// ==============================================
+// BOX LAYOUT ===================================
+// ==============================================
+
+.box-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: url('/images/backgrounds/01.jpg');
+    background-size: cover;
+
+    &__box {
+        width: 25rem;
+        padding: $l-size $m-size;
+        text-align: center;
+        background: fade-out($white, .15);
+        border-radius: 3px;
+    }
+
+    &__title {
+        margin: 0 0 $m-size 0;
+        line-height: 1;
+    }
+}

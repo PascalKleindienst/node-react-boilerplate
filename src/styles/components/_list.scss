@@ -1,0 +1,77 @@
+// ==============================================
+// LIST STYLES ==================================
+// ==============================================
+
+// =============== Header ===============
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $s-size $m-size;
+    color: $grey;
+    background: $off-white;
+    border: 1px solid darken($off-white, 10%);
+}
+
+// =============== Body ===============
+.list-body {
+    margin-bottom: $m-size;
+
+    @media (min-width: $desktop-breakpoint) {
+        margin-bottom: $l-size;
+    }
+}
+
+// =============== Items ===============
+.list-item {
+    display: flex;
+    flex-direction: column;
+    padding: $s-size;
+    color: $dark-grey;
+    text-decoration: none;
+    border: 1px solid darken($off-white, 10%);
+    border-top: 0;
+    transition: background .3s ease;
+
+    &:hover {
+        background: $off-white;
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $m-size;
+    }
+
+    // Sub Items
+    &__title {
+        margin: 0;
+        word-break: break-all;
+    }
+
+    &__sub-title {
+        font-size: $font-size-small;
+        color: $grey;
+    }
+
+    &__data {
+        margin: $s-size 0 0;
+
+        @media (min-width: $desktop-breakpoint) {
+            padding-left: $s-size;
+            margin: 0;
+        }
+    }
+
+    // Modifiers
+    &--message {
+        align-items: center;
+        justify-content: center;
+        padding: $m-size;
+        color: $grey;
+
+        &:hover {
+            background: none;
+        }
+    }
+}

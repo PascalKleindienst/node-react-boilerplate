@@ -1,0 +1,24 @@
+// ==============================================
+// ======== !!! IMPORT ALL THE STYLES !!! =======
+// ==============================================
+
+// Import Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// Import Basic Styles
+@import './base/settings';
+@import './base/base';
+@import './base/visibility';
+
+// Import Components
+@import './components/box-layout';
+@import './components/content-container';
+@import './components/button';
+@import './components/header';
+@import './components/dropdown';
+@import './components/page-header';
+@import './components/input-group';
+@import './components/inputs';
+@import './components/form';
+@import './components/list';
+@import './components/loader';

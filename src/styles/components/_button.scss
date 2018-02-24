@@ -1,0 +1,39 @@
+// ==============================================
+// BUTTONS ======================================
+// ==============================================
+
+// =============== Primary ===============
+.button {
+    display: inline-block;
+    padding: $s-size;
+    font-size: $font-size-large;
+    font-weight: 300;
+    line-height: 1;
+    color: $inverted-font-color;
+    text-decoration: none;
+    background: $light-green;
+    border: 0;
+    transition: background .3s ease;
+
+    &:hover {
+        background: darken($light-green, 5%);
+    }
+}
+
+// =============== Secondary ===============
+.button--secondary {
+    background: darken($light-grey, 10%);
+
+    &:hover {
+        background: darken($light-grey, 15%);
+    }
+}
+
+// =============== Link ===============
+.button--link {
+    background: none;
+
+    &:hover {
+        background: none;
+    }
+}

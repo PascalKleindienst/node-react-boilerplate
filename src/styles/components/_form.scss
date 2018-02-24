@@ -1,0 +1,17 @@
+// ==============================================
+// FORMS )))))===================================
+// ==============================================
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    &__error {
+        margin: 0 0 $m-size 0;
+        font-style: italic;
+    }
+
+    > * {
+        margin-bottom: $m-size;
+    }
+}
