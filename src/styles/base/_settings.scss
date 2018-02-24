@@ -1,0 +1,27 @@
+// ==============================================
+// SETTINGS =====================================
+// ==============================================
+
+// =============== Colors ===============
+$dark-grey:           #333 !default;
+$grey:                #666 !default;
+$light-grey:          #cacccd !default;
+$white:               #fff !default;
+$off-white:           #f0f0f0 !default;
+$light-green:         #60a363 !default;
+$dark-blue:           #466277 !default;
+$inverted-font-color: $white !default;
+
+
+// =============== Font Size ===============
+$font-size-large: 1.8rem !default;
+$font-size-small: 1.4rem !default;
+
+
+// =============== Spacing ===============
+$s-size:             1.2rem !default;
+$m-size:             1.6rem !default;
+$l-size:             2 * $m-size !default;
+$xl-size:            3 * $m-size !default;
+$desktop-breakpoint: 45rem !default;
+$container-width:    120rem !default;

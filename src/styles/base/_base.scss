@@ -1,0 +1,27 @@
+// ==============================================
+// SOME BASIC STYLES ============================
+// ==============================================
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+    line-height: 1.41;
+    color: $dark-grey;
+}
+
+button {
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+    }
+}
+
+.is-active { font-weight: bold; }
