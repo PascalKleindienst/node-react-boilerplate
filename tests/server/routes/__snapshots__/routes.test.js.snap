@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`my routes should return index.html on GET 1`] = `
+exports[`my routes should return index.html on default GET request 1`] = `
 "<!DOCTYPE html>
 <html>
 <head>
