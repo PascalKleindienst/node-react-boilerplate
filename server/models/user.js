@@ -17,9 +17,9 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: DataTypes.DATE
     }, {});
 
-    User.associate = (/*models*/) => {
+    // User.associate = (models) => {
         // associations can be defined here
-    };
+    // };
 
     return User;
 };
