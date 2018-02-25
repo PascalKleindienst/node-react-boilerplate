@@ -6,5 +6,5 @@
     "snapshotSerializers": [
         "enzyme-to-json/serializer"
     ],
-    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/coverage/**",  "!webpack.config.js", "!src/app.js", "!server/server.js", "!**/node_modules/**", "!**/public/**"]
+    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/coverage/**", "!**/migrations/**",  "!webpack.config.js", "!src/app.js", "!server/server.js", "!**/node_modules/**", "!**/public/**"]
 }
